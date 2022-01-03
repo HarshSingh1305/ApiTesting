@@ -9,6 +9,5 @@ jobs:
       - name: Run Taurus Test
         run: |
           pwd
-          bzt taurus.yml
 
 
