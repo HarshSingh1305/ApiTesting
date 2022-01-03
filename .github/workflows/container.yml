@@ -1,4 +1,4 @@
-name: Container
+name: DockerTaurusContainer
 on: push
 
 jobs:
@@ -8,6 +8,7 @@ jobs:
     steps:
       - name: Run Taurus Test
         run: |
+          pwd
           bzt taurus.yml
     
 
