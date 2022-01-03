@@ -9,5 +9,6 @@ jobs:
       - name: Run Taurus Test
         run: |
           pwd
+          docker container ls
 
 
