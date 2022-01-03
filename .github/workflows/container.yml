@@ -1,0 +1,13 @@
+name: Container
+on: push
+
+jobs:
+  node-docker:
+    runs-on: ubuntu-latest
+    container: blazemeter/taurus:latest
+    steps:
+      - name: Run Taurus Test
+        run: |
+          bzt 
+    
+

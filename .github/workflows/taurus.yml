@@ -1,0 +1,6 @@
+execution:
+- scenario: simple
+
+scenarios:
+  simple:
+    script: PetStore-End-to-End-Flow.jmx
