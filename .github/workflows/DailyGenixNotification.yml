@@ -7,7 +7,7 @@ on: [push]
 jobs:
   TriggerNotification:
     runs-on: ubuntu-latest
-    container: blazemeter/taurus:latest
+    container: justb4/jmeter
     steps:
       - uses: actions/checkout@v2
       - name: Trigger DailyGenix Notification
