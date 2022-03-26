@@ -1,8 +1,8 @@
 name: DockerTaurusContainer
-#on: [push]
-on:
-  schedule:
-    - cron:  '45 15 * * *'
+on: [push]
+#on:
+#  schedule:
+#    - cron:  '45 15 * * *'
 
 jobs:
   TriggerNotification:
@@ -13,5 +13,6 @@ jobs:
       - name: Trigger DailyGenix Notification
         run: |
           jmeter -n -t .github/workflows/DailyGenixNotification.jmx
+          echo "$now"
           echo "Notification Triggered"
 
