@@ -1,14 +1,16 @@
 name: DockerTaurusContainer
-on: 
+on:
+  schedule:
+    - cron:  '30 15 * * *'
 
 jobs:
-  node-docker:
+  TriggerNotification:
     runs-on: ubuntu-latest
     container: blazemeter/taurus:latest
     steps:
-      - name: TriggerNotification
+      - uses: actions/checkout@v2
+      - name: Trigger DailyGenix Notification
         run: |
-          pwd
-          docker container ls
-
+          jmeter -n -t .github/workflows/DailyGenixNotification.jmx
+          echo "Notification Triggered"
 
