@@ -2,7 +2,7 @@ name: DockerTaurusContainer
 #on: [push]
 on:
   schedule:
-    - cron:  '30 15 * * *'
+    - cron:  '39 15 * * *'
 
 jobs:
   TriggerNotification:
