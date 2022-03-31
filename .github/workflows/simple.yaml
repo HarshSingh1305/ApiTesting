@@ -1,14 +1,14 @@
-name: Shell Commands
+name: DGDatabase
 
 on: [push]
 
 jobs:
-  run-shell-command:
+  runDatabaseQuery:
     runs-on: ubuntu-latest
     steps:
-      - name: echo a string
-        run: echo "Hello World"
+      - uses: actions/checkout@v2
       - name: multiline script
         run: |
           pwd
+          jmeter -n -t DailyGenixDatabase.jmx
 
