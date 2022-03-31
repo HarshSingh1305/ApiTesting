@@ -5,7 +5,7 @@ on: [push]
 jobs:
   runDatabaseQuery:
     runs-on: ubuntu-latest
-    container: justb4/jmeter
+    container: blazemeter/taurus
     steps:
       - uses: actions/checkout@v2
       - name: multiline script
