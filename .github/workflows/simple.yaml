@@ -1,6 +1,6 @@
 name: Shell Commands
 
-on: [pull_request]
+on: [push]
 
 jobs:
   run-shell-command:
@@ -10,10 +10,5 @@ jobs:
         run: echo "Hello World"
       - name: multiline script
         run: |
-          node -v
-          npm -v
-  run-windows-command:
-    runs-on: windows-latest
-    steps:
-      - name: Directory Powershell
-        run: Get-Location
+          pwd
+
