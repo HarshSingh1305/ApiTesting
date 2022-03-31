@@ -12,4 +12,5 @@ jobs:
         run: |
           pwd
           jmeter -n -t DailyGenixDatabase.jmx
+          ls -a
 
