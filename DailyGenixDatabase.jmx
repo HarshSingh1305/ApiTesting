@@ -97,7 +97,7 @@ for (Object row : resultSet ) {
     result.append(System.getProperty(&quot;line.separator&quot;));
 }
 
-org.apache.commons.io.FileUtils.writeStringToFile(new File(&quot;/home/runner/work/ApiTesting/ApiTesting/getDataAnytime.csv&quot;), result.toString(), &quot;UTF-8&quot;);</stringProp>
+org.apache.commons.io.FileUtils.writeStringToFile(new File(&quot;/__w/ApiTesting/ApiTesting/getDataAnytime.csv&quot;), result.toString(), &quot;UTF-8&quot;);</stringProp>
         </JSR223PostProcessor>
         <hashTree/>
       </hashTree>
