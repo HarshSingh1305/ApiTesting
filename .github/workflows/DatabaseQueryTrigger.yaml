@@ -8,10 +8,11 @@ jobs:
     container: blazemeter/taurus
     steps:
       - uses: actions/checkout@v2
-      - name: multiline script
+      - name: Database script
         run: |
           pwd
           #jmeter -n -t DailyGenixDatabase.jmx
+          bzt DatabaseQueryTriggerTaurus.yaml
           ls -a
           python3 --version
           
