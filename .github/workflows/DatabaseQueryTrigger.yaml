@@ -11,7 +11,7 @@ jobs:
       - name: multiline script
         run: |
           pwd
-          jmeter -n -t DailyGenixDatabase.jmx
+          #jmeter -n -t DailyGenixDatabase.jmx
           ls -a
           python3 --version
           
