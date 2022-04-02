@@ -1,23 +1,6 @@
 execution:
 - scenario: simple
 
-modules:
-  jmeter:
-    path: ~/.bzt/jmeter-taurus/bin/jmeter
-    download-link: https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.4.2.zip
-    version: 5.4.2  # minimal supported version of JMeter is 5.0
-    force-ctg: true   # true by default
-    detect-plugins: true
-    fix-jars: true
-    plugins:
-    - mysql-connector-java-5.1.12-bin
-    plugins-manager:
-      download-link: https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-manager/5.4.2/jmeter-plugins-manager-5.4.2.jar
-      version: 1.3   # minimum 0.16
-    command-runner:
-      download-link: https://search.maven.org/remotecontent?filepath=kg/apc/cmdrunner/5.4.2/cmdrunner-5.4.2.jar
-      version: 2.2   # minimum 2.0
-
 scenarios:
   simple:
     script: DailyGenixDatabase.jmx
