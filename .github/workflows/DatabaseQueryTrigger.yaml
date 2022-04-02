@@ -5,7 +5,7 @@ on: [push]
 jobs:
   runDatabaseQuery:
     runs-on: ubuntu-latest
-    container: justb4/jmeter
+    container: blazemeter/taurus
     steps:
       - uses: actions/checkout@v2
       - name: Database script
@@ -14,8 +14,8 @@ jobs:
           #${JMETER_HOME}/lib
           ls -a
           cp -a /__w/ApiTesting/ApiTesting/mysql-connector-java-5.1.12-bin.jar /opt/apache-jmeter-5.4.3/lib
-          jmeter -n -t DailyGenixDatabase.jmx
-          #bzt DatabaseQueryTriggerTaurus.yaml
+          #jmeter -n -t DailyGenixDatabase.jmx
+          bzt DailyGenixDatabase.jmx
           ls -a
           #python3 --version
           
