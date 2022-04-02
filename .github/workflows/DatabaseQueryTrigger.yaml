@@ -12,6 +12,7 @@ jobs:
         run: |
           pwd
           #${JMETER_HOME}/lib
+          ls -a
           cp -a /mysql-connector-java-5.1.12-bin.jar /opt/apache-jmeter-5.4.3/lib
           #jmeter -n -t DailyGenixDatabase.jmx
           #pip install mysql-connector-python==8.0.11
