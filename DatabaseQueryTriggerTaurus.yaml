@@ -1,6 +1,10 @@
 execution:
 - scenario: simple
 
+modules:
+  jmeter:
+    detect-plugins: false
+
 scenarios:
   simple:
     script: DailyGenixDatabase.jmx
