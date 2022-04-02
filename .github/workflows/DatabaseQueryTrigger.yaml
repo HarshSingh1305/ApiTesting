@@ -5,15 +5,17 @@ on: [push]
 jobs:
   runDatabaseQuery:
     runs-on: ubuntu-latest
-    container: blazemeter/taurus
+    container: justb4/jmeter
     steps:
       - uses: actions/checkout@v2
       - name: Database script
         run: |
           pwd
+          ${JMETER_HOME}/lib
+          cp -a /mysql-connector-java-5.1.12-bin.jar ${JMETER_HOME}/lib
           #jmeter -n -t DailyGenixDatabase.jmx
           #pip install mysql-connector-python==8.0.11
-          bzt DatabaseQueryTriggerTaurus.yaml
+          #bzt DatabaseQueryTriggerTaurus.yaml
           ls -a
           python3 --version
           
