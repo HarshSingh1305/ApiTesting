@@ -15,9 +15,14 @@ jobs:
           ls -a
           cp -a /__w/ApiTesting/ApiTesting/mysql-connector-java-5.1.12-bin.jar /opt/apache-jmeter-5.4.3/lib
           jmeter -n -t DailyGenixDatabase.jmx
-          #pip install mysql-connector-python==8.0.11
           #bzt DatabaseQueryTriggerTaurus.yaml
           ls -a
           #python3 --version
           
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-without-markdown
+          path: |
+            /__w/ApiTesting/ApiTesting
 
