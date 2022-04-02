@@ -12,7 +12,7 @@ jobs:
         run: |
           pwd
           #jmeter -n -t DailyGenixDatabase.jmx
-          pip install mysql-connector-python==8.0.11
+          #pip install mysql-connector-python==8.0.11
           bzt DatabaseQueryTriggerTaurus.yaml
           ls -a
           python3 --version
