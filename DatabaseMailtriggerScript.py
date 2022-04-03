@@ -7,7 +7,7 @@ mail_content = '''PFA for the DailyGenix Database attachment,'''
 
 
 sender_address = 'dailygenixauto@gmail.com'
-sender_pass = ''
+sender_pass = 'H@rshsingh1305'
 receiver_address = 'harshdhiman01@gmail.com,msdhamija@yahoo.co.in'
 
 
