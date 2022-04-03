@@ -22,7 +22,7 @@ attach_file_name = '/__w/ApiTesting/ApiTesting/getDataAnytime.csv'
 attach_file = open(attach_file_name, 'rb') # Open the file as binary mode
 payload = MIMEBase('application', 'octate-stream')
 payload.set_payload((attach_file).read())
-#encoders.encode_base64(payload) #encode the attachment
+encoders.encode_base64(payload) #encode the attachment
 #add payload header with filename
 payload.add_header('Content-Decomposition', 'attachment', filename=attach_file_name)
 message.attach(payload)
