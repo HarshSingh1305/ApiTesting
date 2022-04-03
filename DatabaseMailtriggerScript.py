@@ -13,10 +13,11 @@ def send_mail():
     msg['To'] = 'msdhamija@yahoo.co.in,harshdhiman01@gmail.com'
     # Add body to email
     msg.attach(body_part)
+    
     # open and read the CSV file in binary
     with open('/__w/ApiTesting/ApiTesting/getDataAnytime.csv','rb') as file:
     # Attach the file with filename to the email
-        msg.attach(MIMEApplication(file.read(), Name=FILE_NAME))
+        msg.attach(MIMEApplication(file.read(), Name=getDataAnytime))
 
     # Create SMTP object
     smtp_obj = smtplib.SMTP('smtp.gmail.com', 587)
