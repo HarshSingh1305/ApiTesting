@@ -3,12 +3,12 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
-mail_content = '''Hello,'''
+mail_content = '''PFA for the DailyGenix Database attachment,'''
 
 
-sender_address = 'dhimanharsh01@gmail.com'
+sender_address = 'dailygenixauto@gmail.com'
 sender_pass = ''
-receiver_address = 'harshdhiman01@gmail.com'
+receiver_address = 'harshdhiman01@gmail.com,msdhamija@yahoo.co.in'
 
 
 message = MIMEMultipart()
@@ -18,7 +18,7 @@ message['Subject'] = 'A test mail sent by Python. It has an attachment.'
 
 
 message.attach(MIMEText(mail_content, 'plain'))
-attach_file_name = 'C:/Users/HARSH/OneDrive/Documents/harshtopay.txt'
+attach_file_name = /__w/ApiTesting/ApiTesting/getDataAnytime.csv'
 attach_file = open(attach_file_name, 'rb') # Open the file as binary mode
 payload = MIMEBase('application', 'octate-stream')
 payload.set_payload((attach_file).read())
