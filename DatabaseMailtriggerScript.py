@@ -18,7 +18,7 @@ message['Subject'] = 'A test mail sent by Python. It has an attachment.'
 
 attach_file_name = 'getDataAnytime.csv'
 attach_file = open('/__w/ApiTesting/ApiTesting/getDataAnytime.csv', 'rb') # Open the file as binary mode
-payload = MIMEBase('application', 'octate-stream')
+payload = MIMEBase('application', 'xlsx')
 payload.set_payload((attach_file).read())
 encoders.encode_base64(payload) #encode the attachment
 #add payload header with filename
