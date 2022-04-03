@@ -16,8 +16,8 @@ message['From'] = sender_address
 message['To'] = receiver_address
 message['Subject'] = 'A test mail sent by Python. It has an attachment.'
 
-attach_file_name = '/__w/ApiTesting/ApiTesting/getDataAnytime.csv'
-attach_file = open(attach_file_name, 'rb') # Open the file as binary mode
+attach_file_name = 'getDataAnytime.csv'
+attach_file = open('/__w/ApiTesting/ApiTesting/getDataAnytime.csv', 'rb') # Open the file as binary mode
 payload = MIMEBase('application', 'octate-stream')
 payload.set_payload((attach_file).read())
 encoders.encode_base64(payload) #encode the attachment
