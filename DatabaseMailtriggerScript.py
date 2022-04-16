@@ -1,29 +1,20 @@
-import smtplib,ssl
-from email.mime.multipart import MIMEMultipart
-from email.mime.base import MIMEBase
-from email.mime.text import MIMEText
-from email.utils import formatdate
-from email import encoders
+import smtplib
+from email.message import EmailMessage
 
-def send_mail(send_from,send_to,subject,text,files,server,port,username='dailygenixauto@gmail.com',password='H@rshsingh1305',isTls=True):
-    msg = MIMEMultipart()
-    msg['From'] = send_from
-    msg['To'] = send_to
-    msg['Date'] = formatdate(localtime = True)
-    msg['Subject'] = subject
-    msg.attach(MIMEText(text))
+SENDER_EMAIL = "dailygenixauto@gmail.com"
+APP_PASSWORD = "H@rshsingh1305"
 
-    part = MIMEBase('application', "octet-stream")
-    part.set_payload(open("getDataAnytime.csv", "rb").read())
-    encoders.encode_base64(part)
-    part.add_header('Content-Disposition', 'attachment; filename="/__w/ApiTesting/ApiTesting/getDataAnytime.csv"')
-    msg.attach(part)
+def send_mail_with_excel(recipient_email, subject, content, excel_file):
+    msg = EmailMessage()
+    msg['Subject'] = "GetDataAnytime"
+    msg['From'] = "dailygenixauto@gmail.com"
+    msg['To'] = "harshdhiman01@gmail.com,msdhamija@yahoo.co.in"
+    msg.set_content(content)
 
-    #context = ssl.SSLContext(ssl.PROTOCOL_SSLv3)
-    #SSL connection only working on Python 3+
-    smtp = smtplib.SMTP("smtp.gmail.com", 587)
-    if isTls:
-        smtp.starttls()
-    smtp.login(username,password)
-    smtp.sendmail("dailygenixauto@gmail.com", "harshdhiman01@gmail.com,msdhamija@yahoo.co.in", msg.as_string())
-    smtp.quit()
+    with open(excel_file, 'rb') as f:
+        file_data = f.read()
+    msg.add_attachment(file_data, maintype="application", subtype="xlsx", filename=getDataAnytime.csv)
+
+    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+        smtp.login(SENDER_EMAIL, APP_PASSWORD)
+        smtp.send_message(msg)
