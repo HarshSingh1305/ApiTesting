@@ -17,7 +17,7 @@ jobs:
           apk add python3-dev
           cp -a /__w/ApiTesting/ApiTesting/mysql-connector-java-5.1.12-bin.jar /opt/apache-jmeter-5.4.3/lib
           jmeter -n -t DailyGenixDatabase.jmx
-          
+          ls -a
           
       - name: triggerEmail
         run: |
