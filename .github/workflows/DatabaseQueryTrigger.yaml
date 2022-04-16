@@ -1,6 +1,9 @@
 name: DGDatabase1
 
-on: [push]
+on:
+  schedule:
+    - cron:  '30 15 * * *'
+    - cron:  '5 13 * * *'
 
 jobs:
   runDatabaseQuery:
