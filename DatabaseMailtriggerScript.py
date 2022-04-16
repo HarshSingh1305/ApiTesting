@@ -6,7 +6,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 subject = "GetDataAnytime_DailyGenix"
-body = "This is an email with attachment sent from Python"
+body = "Private&Confidential
 sender_email = "dailygenixauto@gmail.com"
 receiver_email = "harshdhiman01@gmail.com,msdhamija@yahoo.co.in"
 password = 'H@rshsingh1305'
