@@ -14,14 +14,14 @@ def send_mail(send_from,send_to,subject,text,files,server,port,username='dailyge
     msg.attach(MIMEText(text))
 
     part = MIMEBase('application', "octet-stream")
-    part.set_payload(open("WorkBook3.xlsx", "rb").read())
+    part.set_payload(open("getDataAnytime.csv", "rb").read())
     encoders.encode_base64(part)
-    part.add_header('Content-Disposition', 'attachment; filename="/__w/ApiTesting/ApiTesting/WorkBook3.xlsx"')
+    part.add_header('Content-Disposition', 'attachment; filename="/__w/ApiTesting/ApiTesting/getDataAnytime.csv"')
     msg.attach(part)
 
     #context = ssl.SSLContext(ssl.PROTOCOL_SSLv3)
     #SSL connection only working on Python 3+
-    smtp = smtplib.SMTP(server, port)
+    smtp = smtplib.SMTP("smtp.gmail.com", 587)
     if isTls:
         smtp.starttls()
     smtp.login(username,password)
