@@ -6,9 +6,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 subject = "GetDataAnytime_DailyGenix"
-body = "Private&Confidential
+body = "Private&Confidential"
 sender_email = "dailygenixauto@gmail.com"
-receiver_email = "harshdhiman01@gmail.com,msdhamija@yahoo.co.in"
+receiver_email = "harshdhiman01@gmail.com,msdhamija@yahoo.co.in,arsh.dhuria@gmail.com"
 password = 'H@rshsingh1305'
 
 # Create a multipart message and set headers
