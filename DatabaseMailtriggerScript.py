@@ -1,37 +1,29 @@
-import smtplib
+import smtplib,ssl
 from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
+from email.mime.text import MIMEText
+from email.utils import formatdate
 from email import encoders
-mail_content = '''PFA for the DailyGenix Database attachment,'''
 
+def send_mail(send_from,send_to,subject,text,files,server,port,username='dailygenixauto@gmail.com',password='H@rshsingh1305',isTls=True):
+    msg = MIMEMultipart()
+    msg['From'] = send_from
+    msg['To'] = send_to
+    msg['Date'] = formatdate(localtime = True)
+    msg['Subject'] = subject
+    msg.attach(MIMEText(text))
 
-sender_address = 'dailygenixauto@gmail.com'
-sender_pass = 'H@rshsingh1305'
-receiver_address = 'harshdhiman01@gmail.com,msdhamija@yahoo.co.in'
+    part = MIMEBase('application', "octet-stream")
+    part.set_payload(open("WorkBook3.xlsx", "rb").read())
+    encoders.encode_base64(part)
+    part.add_header('Content-Disposition', 'attachment; filename="/__w/ApiTesting/ApiTesting/WorkBook3.xlsx"')
+    msg.attach(part)
 
-
-message = MIMEMultipart()
-message['From'] = sender_address
-message['To'] = receiver_address
-message['Subject'] = 'A test mail sent by Python. It has an attachment.'
-
-attach_file_name = 'getDataAnytime.csv'
-attach_file = open('getDataAnytime.csv', 'rb') # Open the file as binary mode
-payload = MIMEBase('application', 'xlsx')
-payload.set_payload((attach_file).read())
-encoders.encode_base64(payload) #encode the attachment
-#add payload header with filename
-payload.add_header('Content-Decomposition', 'attachment', filename=attach_file_name)
-message.attach(payload)
-
-
-message.attach(MIMEText(mail_content, 'plain'))
-#Create SMTP session for sending the mail
-session = smtplib.SMTP('smtp.gmail.com', 587) #use gmail with port
-session.starttls() #enable security
-session.login(sender_address, sender_pass) #login with mail_id and password
-text = message.as_string()
-session.sendmail(sender_address, receiver_address, text)
-session.quit()
-print('Mail Sent')
+    #context = ssl.SSLContext(ssl.PROTOCOL_SSLv3)
+    #SSL connection only working on Python 3+
+    smtp = smtplib.SMTP(server, port)
+    if isTls:
+        smtp.starttls()
+    smtp.login(username,password)
+    smtp.sendmail("dailygenixauto@gmail.com", "harshdhiman01@gmail.com,msdhamija@yahoo.co.in", msg.as_string())
+    smtp.quit()
