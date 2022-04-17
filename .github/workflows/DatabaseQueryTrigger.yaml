@@ -1,4 +1,4 @@
-name: DGDatabase1
+name: GetDataAnyTime
 
 on:
   schedule:
