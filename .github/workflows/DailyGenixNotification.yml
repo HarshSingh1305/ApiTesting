@@ -1,4 +1,4 @@
-name: DockerTaurusContainer
+name: DailyGenixNotification
 #on: [push]
 on:
   schedule:
