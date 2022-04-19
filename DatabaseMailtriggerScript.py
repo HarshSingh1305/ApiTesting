@@ -8,7 +8,7 @@ from email.mime.text import MIMEText
 subject = "GetDataAnytime_DailyGenix"
 body = "Private&Confidential"
 sender_email = "dailygenixauto@gmail.com"
-receiver_email = "harshdhiman01@gmail.com,msdhamija@yahoo.co.in,arsh.dhuria@gmail.com,mankarans@gmail.com,amritpalsingh2116@gmail.com"
+receiver_email = "harshdhiman01@gmail.com,msdhamija@yahoo.co.in,arsh.dhuria@gmail.com,mankarans@gmail.com"
 password = 'H@rshsingh1305'
 
 # Create a multipart message and set headers
