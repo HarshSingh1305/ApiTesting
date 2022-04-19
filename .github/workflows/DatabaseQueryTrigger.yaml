@@ -1,9 +1,9 @@
 name: GetDataAnyTime
 
-on:
-  schedule:
-    - cron:  '30 15 * * *'
-    - cron:  '5 13 * * *'
+on: [push]
+#  schedule:
+#    - cron:  '30 15 * * *'
+#    - cron:  '5 13 * * *'
 
 jobs:
   runDatabaseQuery:
