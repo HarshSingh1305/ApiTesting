@@ -18,7 +18,7 @@
         <stringProp name="connectionAge">5000</stringProp>
         <stringProp name="connectionProperties"></stringProp>
         <stringProp name="dataSource">dailygenix</stringProp>
-        <stringProp name="dbUrl">jdbc:mysql://aa1pqa954zp8y04.cgl0cgvu1agj.ap-south-1.rds.amazonaws.com:3306/dailygenix?characterEncoding=utf8</stringProp>
+        <stringProp name="dbUrl">jdbc:mysql://aa10h75mwh8yv1m.cxfa0ezkxkhu.ap-south-1.rds.amazonaws.com:3306/dailygenix?characterEncoding=utf8</stringProp>
         <stringProp name="driver">com.mysql.jdbc.Driver</stringProp>
         <stringProp name="initQuery"></stringProp>
         <boolProp name="keepAlive">true</boolProp>
@@ -47,7 +47,7 @@
       <hashTree>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request" enabled="true">
           <stringProp name="dataSource">dailygenix</stringProp>
-          <stringProp name="query">CALL `dailygenix`.`getdataanytime`();</stringProp>
+          <stringProp name="query">SELECT username,productname,price,cart_master_quantity,product_master.quan as quan FROM dailygenix.order_master inner join address_master on address_master.address_master_id=addressid inner join order_product on order_product.order_id=order_master_id inner join cart_master on cart_master.cart_master_id=cart_id inner join product_master on product_master.product_master_id=cart_master_productid where order_type=&apos;O&apos; and (order_master.status=&apos;P&apos;);</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
