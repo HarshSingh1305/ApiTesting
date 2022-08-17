@@ -22,7 +22,7 @@ jobs:
           ls -a
           
       - name: Announcerr
-        uses: singhkshitij/announcerr@v2
+        uses: singhkshitij/announcerr@v2.0
         with:
           server_address: smtp.gmail.com
           server_port: 465
