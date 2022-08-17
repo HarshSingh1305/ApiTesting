@@ -20,20 +20,26 @@ jobs:
           cp -a /__w/ApiTesting/ApiTesting/mysql-connector-java-5.1.12-bin.jar /opt/apache-jmeter-5.4.3/lib
           jmeter -n -t DailyGenixDatabase.jmx
           ls -a
-       
-      - name: Send email
-        uses: devellany/send-mailer@v1.0.2
+          
+      - name: Announcerr
+        uses: singhkshitij/announcerr@v2
         with:
-          host: smtp.gmail.com
-          account: dailygenixauto@gmail.com
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: dailygenixauto@gmail.com
           password: H@rshsingh1305
-          sender: DailyGgenix
-          from: dailygenixauto@gmail.com
+          subject: GetDataAnyTime
+          # Literal body:
+          #body: Just launched new version of my ${{github.repository}} ! It is fully packed with awesome features.
+          # Read file contents as body:
+          body: PFA for attachment
           to: harshdhiman01@gmail.com
-          subject: GetOrderAnyTime
-          body: PFA for File
-          contentType: text/html
+          from: dailygenixauto@gmail.com
+          # Optional content type (defaults to text/plain):
+          content_type: text/html
+          # Optional attachments:
           attachments: getDataAnytime.csv
+       
       #- name: triggerEmail
       #  run: |
       #    python3 DatabaseMailtriggerScript.py      
